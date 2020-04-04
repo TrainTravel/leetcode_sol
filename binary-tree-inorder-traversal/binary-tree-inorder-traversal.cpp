@@ -19,8 +19,6 @@ public:
             return v;
         
         TreeNode* curr = root;
-        TreeNode* prev;
-
         while(curr!=NULL || !st.empty())
         {
             if(curr != NULL)
@@ -32,7 +30,6 @@ public:
                 curr = &(st.top());
                 st.pop();
                 v.push_back(curr->val);
-                prev = curr;
                 curr = curr->right;
             }
         }

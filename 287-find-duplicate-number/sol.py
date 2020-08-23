@@ -1,5 +1,6 @@
 #Time Complexity: O(nlogn)
 #Space Complexity: O(1)
+#Sort the array first, and then use two pointers to gradually check duplicates.
 class Solution:
     def findDuplicate(self, nums: List[int]) -> int:
         if len(nums) == 2:

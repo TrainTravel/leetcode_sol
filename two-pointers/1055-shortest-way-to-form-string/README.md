@@ -9,6 +9,11 @@ First, I assumed that the target string would be longer than the source string, 
 The inner loop is a for loop iterating over source string.
 So you can see in the inner loop, it's the same as problem 392, I advance the target string pointer **ti** when it exists in the source string, and advance the source string pointer **si** to see if the current subsequence is any longer.
 
+**char_found** is for returning early that this character doesn't exist in source, so return -1
+**subseq_cnt** is for counting the number of subsequences
+
+Later when I submitted the solution, I found out that target string pointer can actually move to the end of the target string even in the inner loop(i.e. when every character of the target is in source in some loop), so a guard was added(if t1 >= len(target)).
+
 # Complexity
 - Time complexity:
 <!-- Add your time complexity here, e.g. $$O(n)$$ -->
@@ -16,6 +21,7 @@ O(MN), where M is length of target string, and N is length of source string
 
 - Space complexity:
 <!-- Add your space complexity here, e.g. $$O(n)$$ -->
+O(n)
 
 # Code
 ```
@@ -27,7 +33,6 @@ class Solution:
 
         while ti < len(target):
             # check the source string to see if it contains the next character in target
-            # for si in range(len(source)):
 
             char_found = False
             # go through the source string to see:

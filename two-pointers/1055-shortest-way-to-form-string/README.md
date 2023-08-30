@@ -21,7 +21,7 @@ O(MN), where M is length of target string, and N is length of source string
 
 - Space complexity:
 <!-- Add your space complexity here, e.g. $$O(n)$$ -->
-O(n)
+O(1) space, only variables are used, no set used here
 
 # Code
 ```
